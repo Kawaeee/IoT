@@ -1,0 +1,25 @@
+//pbutton_state = press/release on button - LED on/off
+int led = 13; //Define the LED pin
+int buttonpin = 3; //Define the push button pin
+int val; //Define a numeric variable
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(led,OUTPUT);
+  pinMode(buttonpin,INPUT);
+}
+
+void loop()
+{
+  val = digitalRead(buttonpin); // check the state of the button
+  if(val==HIGH) // if button is pressed, turn LED on
+  {
+    digitalWrite(led,HIGH);
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+  Serial.println(val);
+}
